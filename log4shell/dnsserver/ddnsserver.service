@@ -1,0 +1,12 @@
+[Unit]
+Description=hello world service
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ec2-user
+ExecStart=/bin/bash -c '/opt/dnsserver/ddnsserver.py >> /var/log/ddnsserver.log'
+
+[Install]
+WantedBy=multi-user.target
